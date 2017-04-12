@@ -18,4 +18,5 @@ $app->get('/', function () use ($app) {
 $app->get('users/{id}', 'UserController@find');
 
 
-$app->get('employees', 'EmployeesController@store');
+$app->post('employees', 'EmployeesController@store');
+$app->get('employees/{id}', 'EmployeesController@find');

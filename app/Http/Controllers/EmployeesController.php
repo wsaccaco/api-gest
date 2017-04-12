@@ -24,7 +24,16 @@ class EmployeesController extends Controller
         //
     }
 
-    public function store(){
-        return "waldo";
+    public function store(Request $request){
+//        $employee = new Employee($request->input());
+//        $employee->save();
+//        return $employee;
+        $employee = Employee::create($request->input());
+        return $employee;
+
+    }
+
+    public function find($id){
+        return Employee::find($id);
     }
 }

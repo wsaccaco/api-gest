@@ -13,7 +13,7 @@ class Employee extends Model
      * @var array
      */
     protected $fillable = [
-        'employee_name', 'employee_lastname',
+        'id','name', 'last_name', 'doc_type', 'doc_number', 'type'
     ];
     public $incrementing = false;
     public $timestamps = false;
