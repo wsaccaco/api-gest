@@ -7,9 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
 
-    public $primaryKey = "employee_id";
-    public $timestamps = false;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -18,4 +15,6 @@ class Employee extends Model
     protected $fillable = [
         'employee_name', 'employee_lastname',
     ];
+    public $incrementing = false;
+    public $timestamps = false;
 }

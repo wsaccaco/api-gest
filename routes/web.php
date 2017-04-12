@@ -14,3 +14,8 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->get('users/{id}', 'UserController@find');
+
+
+$app->get('employees', 'EmployeesController@store');
