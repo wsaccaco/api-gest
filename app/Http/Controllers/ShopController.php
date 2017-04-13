@@ -9,10 +9,10 @@
 namespace App\Http\Controllers;
 
 
-use App\Employee;
+use App\Store;
 use Illuminate\Http\Request;
 
-class EmployeesController extends Controller
+class ShopController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,18 +24,13 @@ class EmployeesController extends Controller
         //
     }
 
-    public function store(Request $request){
-        $employee = Employee::create($request->input());
-        return $employee;
-
-    }
 
     public function find($id){
-        return Employee::find($id);
+        return Store::find($id);
     }
 
     public function all(){
-        return Employee::all();
+        return Store::all();
     }
 
 }

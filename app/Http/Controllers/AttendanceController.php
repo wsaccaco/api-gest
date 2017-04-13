@@ -9,10 +9,10 @@
 namespace App\Http\Controllers;
 
 
-use App\Employee;
+use App\Attendance;
 use Illuminate\Http\Request;
 
-class EmployeesController extends Controller
+class AttendanceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,17 +25,16 @@ class EmployeesController extends Controller
     }
 
     public function store(Request $request){
-        $employee = Employee::create($request->input());
+        $employee = Attendance::create($request->input());
         return $employee;
-
     }
 
     public function find($id){
-        return Employee::find($id);
+        return Attendance::find($id);
     }
 
-    public function all(){
-        return Employee::all();
+    public function forEmployee($id){
+        return Attendance::where('employee_id', $id)->get();
     }
 
 }

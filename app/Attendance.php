@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model
+class Attendance extends Model
 {
 
     /**
@@ -14,13 +14,11 @@ class Employee extends Model
      */
     protected $fillable = [
         'id',
-        'name',
-        'last_name',
-        'doc_type',
-        'doc_number',
         'type',
-        'shops_id'
+        'date',
+        'latlng',
+        'employees_id'
     ];
-    public $incrementing = false;
+
     public $timestamps = false;
 }

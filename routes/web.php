@@ -17,6 +17,21 @@ $app->get('/', function () use ($app) {
 
 $app->get('users/{id}', 'UserController@find');
 
-
+/*
+ * Employees
+ */
+$app->get('employees', 'EmployeesController@all');
 $app->post('employees', 'EmployeesController@store');
 $app->get('employees/{id}', 'EmployeesController@find');
+
+/*
+ * Attendance
+ */
+$app->post('attendances', 'AttendanceController@store');
+$app->get('employees/{id}/attendances', 'AttendanceController@forEmployee');
+
+/*
+ * Stores
+ */
+$app->post('stores', 'EmployeesController@store');
+$app->get('stores/{id}', 'EmployeesController@find');
