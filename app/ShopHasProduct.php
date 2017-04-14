@@ -20,5 +20,7 @@ class ShopHasProduct extends Model
         'status'
     ];
 
+    public $table = "shops_has_products";
+
     public $timestamps = false;
 }

@@ -9,7 +9,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Store;
+use App\Shop;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -26,11 +26,11 @@ class ShopController extends Controller
 
 
     public function find($id){
-        return Store::find($id);
+        return Shop::find($id);
     }
 
     public function all(){
-        return Store::all();
+        return Shop::all();
     }
 
 }

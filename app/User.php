@@ -29,6 +29,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+    public $primaryKey = "employees_id";
     public $incrementing = false;
     public $timestamps = false;
 }
