@@ -33,5 +33,13 @@ $app->get('employees/{id}/attendances', 'AttendanceController@forEmployee');
 /*
  * Stores
  */
-$app->post('stores', 'EmployeesController@store');
-$app->get('stores/{id}', 'EmployeesController@find');
+$app->post('shops', 'ShopController@store');
+$app->get('shops/{id}', 'ShopController@find');
+
+/*
+ * Products
+ */
+
+$app->get("products", "ProductController@all");
+$app->get("shops/{shops}/products", "ProductController@forShops");
+$app->put("shops/{shops}/products/{product}", "ProductController@update");
