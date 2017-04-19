@@ -12,7 +12,7 @@
 */
 
 $app->get('/', function (\Illuminate\Http\Request $request) use ($app) {
-    $has = app('hash')->make("Ruthsarai");
+    $has = app('hash')->make("tetitas123");
     return $has;
     return app('hash')->check("waldo", $has) ? "waldo": "puto";
     return \Illuminate\Support\Facades\Auth::user();
