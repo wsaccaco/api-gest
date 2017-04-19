@@ -52,5 +52,7 @@ $app->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($app) 
 });
 
 
+$app->get('shops', 'ShopController@all');
+
 $app->post('auth/login', 'UserController@login');
 $app->get('auth/logout', 'UserController@logout');
