@@ -32,7 +32,7 @@ class UserController extends Controller
             $user->save();
             return $user;
         }else{
-            return null;
+            return "no identificado";
         }
 
     }
