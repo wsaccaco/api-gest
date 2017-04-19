@@ -24,7 +24,6 @@ class UserController extends Controller
 
     public function login(Request $request){
         $input = $request->only(['name', 'password']);
-        return $input;
         $user = User::where("name", $input["name"])->first();
 //        return app('hash')->check($input["password"], $user->password)? "waldo":"saccaco";
 
