@@ -25,6 +25,7 @@ class UserController extends Controller
     public function login(Request $request){
         $input = $request->only(['name', 'password']);
         $user = User::where("name", $input["name"])->first();
+        return $user;
 //        return app('hash')->check($input["password"], $user->password)? "waldo":"saccaco";
 
         if(app('hash')->check($input["password"], $user->password)){
@@ -38,6 +39,7 @@ class UserController extends Controller
     }
 
     public function logout(){
-        return "waldo";
+        return User::where("name", "waldo")->first();
+        return app("hash")->check("tetitas123", '$2y$10$wJXNpfmhRUFNpNQj5/wMnewOeRcDKEigysF3X0ouwa3d2ramullYG')?"verdad":"mentira";
     }
 }
