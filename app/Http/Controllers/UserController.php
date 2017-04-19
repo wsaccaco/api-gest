@@ -25,8 +25,7 @@ class UserController extends Controller
     public function login(Request $request){
         $input = $request->only(['name', 'password']);
         $user = User::where("name", $input["name"])->first();
-        return $user;
-//        return app('hash')->check($input["password"], $user->password)? "waldo":"saccaco";
+        return app('hash')->check($input["password"], $user->password)? "waldo":"saccaco";
 
         if(app('hash')->check($input["password"], $user->password)){
             $user->api_token = app('hash')->make(rand(99999, 999999));
