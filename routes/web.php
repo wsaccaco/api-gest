@@ -52,9 +52,9 @@ $app->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($app) 
 });
 
 
-$app->group(['namespace' => 'App\Http\Controllers'], function () use ($app) {
-    $app->get('shops', 'ShopController@all');
+$app->group(['namespace' => 'App\Http\Controllers'], function($group) {
+    $group->get('shops', 'ShopController@all');
 
-    $app->post('auth/login', 'UserController@login');
-    $app->get('auth/logout', 'UserController@logout');
+    $group->post('auth/login', 'UserController@login');
+    $group->get('auth/logout', 'UserController@logout');
 });
