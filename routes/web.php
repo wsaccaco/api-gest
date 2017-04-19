@@ -39,7 +39,7 @@ $app->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($app) 
     /*
      * Shops
      */
-    $app->get('shops', 'ShopController@all');
+//    $app->get('shops', 'ShopController@all');
     $app->get('shops/{id}', 'ShopController@find');
 
     /*
@@ -51,6 +51,7 @@ $app->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($app) 
     $app->put("shops/{shops}/products/{product}", "ProductController@update");
 });
 
+    $app->get('shops', 'ShopController@all');
 
 $app->post('auth/login', 'UserController@login');
 $app->get('auth/logout', 'UserController@logout');
