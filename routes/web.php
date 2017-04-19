@@ -51,7 +51,10 @@ $app->group(['middleware' => 'auth', 'prefix' => 'api'], function () use ($app) 
     $app->put("shops/{shops}/products/{product}", "ProductController@update");
 });
 
+
+$app->group(['namespace' => 'App\Http\Controllers'], function () use ($app) {
     $app->get('shops', 'ShopController@all');
 
-$app->post('auth/login', 'UserController@login');
-$app->get('auth/logout', 'UserController@logout');
+    $app->post('auth/login', 'UserController@login');
+    $app->get('auth/logout', 'UserController@logout');
+});
