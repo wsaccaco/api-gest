@@ -32,7 +32,8 @@ class UserController extends Controller
             $user->save();
             return $user;
         }else{
-            return "no identificado";
+            $response["status"] = "failure";
+            return response()->json($response);
         }
 
     }
