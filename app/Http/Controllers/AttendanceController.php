@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Attendance;
+use App\Employee;
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
@@ -34,7 +35,10 @@ class AttendanceController extends Controller
     }
 
     public function forEmployee($id){
-        return Attendance::where('employees_id', $id)->get();
+        $employee = Employee::find($id);
+//        $employee->attendance
+        $collect = collect(Attendance::where('employees_id', $id)->get())
+        return $collect->groupBy("date");
     }
 
 }
