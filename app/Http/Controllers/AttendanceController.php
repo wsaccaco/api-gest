@@ -34,7 +34,7 @@ class AttendanceController extends Controller
     }
 
     public function forEmployee($id){
-        return Attendance::where('employee_id', $id);
+        return Attendance::where('employees_id', $id)->get();
     }
 
 }
