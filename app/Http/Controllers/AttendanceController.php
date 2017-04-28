@@ -37,7 +37,7 @@ class AttendanceController extends Controller
     public function forEmployee($id){
         $employee = Employee::find($id);
 //        $employee->attendance
-        $collect = collect(Attendance::where('employees_id', $id)->get())
+        $collect = collect(Attendance::where('employees_id', $id)->get());
         return $collect->groupBy("date");
     }
 
